@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="UTF-8"?><add-logging-context-service tmpl-alias="add-logging-context-service" tmpl-author="Default Admin" tmpl-class-name="com.adaptris.core.services.AddLoggingContext" tmpl-created="2019-02-20T10:23:01" tmpl-desc="" tmpl-keywords="service" tmpl-name="naughty-carson-20190220102320949" tmpl-target-version="" tmpl-title="reretretret" tmpl-type="service" tmpl-wizard="true" wizard-step1-desc="Description" wizard-step1-label="Step" wizard-step1-order="1">
+  <unique-id>naughty-carson</unique-id>
+  <key wizard-desc="XPath:/add-logging-context-service/key" wizard-key="key" wizard-label="" wizard-step="step1" wizard-type="string">asd</key>
+  <value wizard-desc="XPath:/add-logging-context-service/value" wizard-key="value" wizard-label="" wizard-step="step1" wizard-type="string">asd</value>
+</add-logging-context-service>

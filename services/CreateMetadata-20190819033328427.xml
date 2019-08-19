@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?><embedded-scripting-service tmpl-alias="embedded-scripting-service" tmpl-author="Default Admin" tmpl-class-name="com.adaptris.core.services.EmbeddedScriptingService" tmpl-created="2019-08-19T03:33:14" tmpl-desc="" tmpl-keywords="service" tmpl-name="CreateMetadata-20190819033328427" tmpl-target-version="3.9.1B1-RELEASE(2019-08-13)" tmpl-title="New embedded-scripting-service CreateMetadata" tmpl-type="service" tmpl-wizard="true" wizard-step1-desc="Description" wizard-step1-label="Step" wizard-step1-order="1">
+  <unique-id>CreateMetadata</unique-id>
+  <language wizard-desc="XPath:/embedded-scripting-service/language" wizard-key="language" wizard-label="" wizard-step="step1" wizard-type="string">javascript</language>
+  <script wizard-desc="XPath:/embedded-scripting-service/script" wizard-key="script" wizard-label="" wizard-step="step1" wizard-type="string">
+                
+var md_total_value = Math.floor((Math.random() * 1000)) + 1;
+var md_unit_value = Math.floor((Math.random() * 100)) + 1;
+                
+message.addMetadata('OrderValue', md_total_value);
+message.addMetadata('NumberOfUnits', md_unit_value);
+
+var md_count_index = Math.floor((Math.random() * 4));
+var md_count_values = [ "Laptop", "Desktop" ,  "Tablet", "Smartphone"];
+message.addMetadata('UnitType', md_count_values[md_count_index]);
+
+              
+                </script>
+</embedded-scripting-service>

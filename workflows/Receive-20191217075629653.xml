@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="UTF-8"?><standard-workflow tmpl-alias="standard-workflow" tmpl-author="Default Admin" tmpl-class-name="com.adaptris.core.StandardWorkflow" tmpl-created="2019-12-17T07:56:24" tmpl-desc="" tmpl-keywords="workflow" tmpl-name="Receive-20191217075629653" tmpl-target-version="3.9.3B1-RELEASE(2019-12-09:13:29:51 GMT)" tmpl-title="standard-workflow Receive Template" tmpl-type="workflow" wizard-step1-desc="Description" wizard-step1-label="Step" wizard-step1-order="1">
+  <consumer class="polling-trigger">
+    <unique-id>stoic-lumiere</unique-id>
+    <destination class="configured-consume-destination">
+      <configured-thread-name>ReceiveOrders</configured-thread-name>
+    </destination>
+    <poller class="random-interval-poller"/>
+    <message-provider class="static-polling-trigger-template">
+      <template>Message triggered by RECEIVE_ORDERS</template>
+    </message-provider>
+  </consumer>
+  <service-collection class="service-list">
+    <unique-id>reverent-blackwell</unique-id>
+    <services>
+      <add-timestamp-metadata-service>
+        <unique-id>AddTimestamp</unique-id>
+        <metadata-key>timestamp</metadata-key>
+        <date-format-builder>
+          <format>yyyy-MM-dd'T'HH:mm:ssZ</format>
+        </date-format-builder>
+      </add-timestamp-metadata-service>
+      <payload-hashing-service>
+        <unique-id>HashPayload</unique-id>
+        <hash-algorithm>MD5</hash-algorithm>
+        <metadata-key>payloadHash</metadata-key>
+      </payload-hashing-service>
+      <generate-unique-metadata-value-service>
+        <unique-id>GenerateUniqueMetadata</unique-id>
+        <generator class="guid-generator"/>
+      </generate-unique-metadata-value-service>
+      <log-message-service>
+        <unique-id>LogMessage</unique-id>
+        <log-level>DEBUG</log-level>
+      </log-message-service>
+      <embedded-scripting-service>
+        <unique-id>FailsSomeOfTheTime</unique-id>
+        <language>javascript</language>
+        <script>
+                
+var maybeFail = Math.floor((Math.random() * 100) + 1);
+if (maybeFail &lt;= 5) {
+  message.addMetadata("WorkflowStatus", "WorkflowFailure");
+} else {
+  message.addMetadata("WorkflowStatus", "WorkflowSuccess");
+}
+                
+                </script>
+      </embedded-scripting-service>
+      <branching-service-collection>
+        <unique-id>CheckWorkflowStatus</unique-id>
+        <services>
+          <metadata-value-branching-service>
+            <unique-id>CheckWorkflowStatus</unique-id>
+            <metadata-key>WorkflowStatus</metadata-key>
+            <default-service-id>WorkflowFailure</default-service-id>
+            <value-matcher class="use-key-as-service-id-value-matcher"/>
+            <metadata-to-service-id-mappings/>
+          </metadata-value-branching-service>
+          <service-list>
+            <unique-id>WorkflowSuccess</unique-id>
+            <services/>
+          </service-list>
+          <service-list>
+            <unique-id>WorkflowFailure</unique-id>
+            <services>
+              <throw-exception-service>
+                <unique-id>desperate-stonebraker</unique-id>
+                <exception-generator class="exception-from-metadata">
+                  <default-exception-message>Order Receive marked as Failed</default-exception-message>
+                </exception-generator>
+              </throw-exception-service>
+            </services>
+          </service-list>
+        </services>
+        <first-service-id>CheckWorkflowStatus</first-service-id>
+      </branching-service-collection>
+    </services>
+  </service-collection>
+  <producer class="null-message-producer">
+    <unique-id>silly-fermi</unique-id>
+  </producer>
+  <produce-exception-handler class="null-produce-exception-handler"/>
+  <unique-id>Receive</unique-id>
+  <message-metrics-interceptor>
+    <unique-id>Receive-MessageMetrics</unique-id>
+    <timeslice-duration>
+      <unit>MINUTES</unit>
+      <interval>5</interval>
+    </timeslice-duration>
+    <timeslice-history-count>12</timeslice-history-count>
+  </message-metrics-interceptor>
+  <in-flight-workflow-interceptor>
+    <unique-id>Receive-InFlight</unique-id>
+  </in-flight-workflow-interceptor>
+</standard-workflow>

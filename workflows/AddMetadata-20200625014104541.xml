@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?><standard-workflow tmpl-alias="standard-workflow" tmpl-author="Default Admin" tmpl-class-name="com.adaptris.core.StandardWorkflow" tmpl-created="2020-06-25T01:40:44" tmpl-desc="" tmpl-keywords="workflow" tmpl-name="AddMetadata-20200625014104541" tmpl-target-version="3.10.2B1-RELEASE(2020-06-22:12:12:50 BST)" tmpl-title="standard-workflow AddMetadata Template" tmpl-type="workflow" tmpl-wizard="true" wizard-step1-desc="Description" wizard-step1-label="Step" wizard-step1-order="1">
+  <consumer class="null-message-consumer">
+    <unique-id>romantic-wilson</unique-id>
+  </consumer>
+  <service-collection class="service-list">
+    <unique-id>eager-hugle</unique-id>
+    <services>
+      <add-metadata-service>
+        <unique-id>big-dijkstra</unique-id>
+        <metadata-element>
+          <key wizard-desc="XPath:/standard-workflow/service-collection/services/add-metadata-service[unique-id=&#34;big-dijkstra&#34;]/metadata-element[1]/key" wizard-key="keyValuePair.1.key" wizard-label="" wizard-step="step1" wizard-type="">Key</key>
+          <value wizard-desc="XPath:/standard-workflow/service-collection/services/add-metadata-service[unique-id=&#34;big-dijkstra&#34;]/metadata-element[1]/value" wizard-key="keyValuePair.1.value" wizard-label="" wizard-step="step1" wizard-type="">Value</value>
+        </metadata-element>
+      </add-metadata-service>
+    </services>
+  </service-collection>
+  <producer class="null-message-producer">
+    <unique-id>sick-hypatia</unique-id>
+  </producer>
+  <produce-exception-handler class="null-produce-exception-handler"/>
+  <unique-id>AddMetadata</unique-id>
+</standard-workflow>

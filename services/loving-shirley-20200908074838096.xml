@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?><add-formatted-metadata-service tmpl-alias="add-formatted-metadata-service" tmpl-author="Default Admin" tmpl-class-name="com.adaptris.core.services.metadata.AddFormattedMetadataService" tmpl-created="2020-09-08T07:47:56" tmpl-desc="" tmpl-keywords="service" tmpl-name="loving-shirley-20200908074838096" tmpl-target-version="3.11.0B1-RELEASE(2020-09-03:09:15:16 BST)" tmpl-title="add-formatted-metadata-service loving-shirley Template" tmpl-type="service" tmpl-wizard="true" wizard-step1-desc="Description" wizard-step1-label="Argument" wizard-step1-order="1">
+  <unique-id>loving-shirley</unique-id>
+  <format-string wizard-desc="XPath:/add-formatted-metadata-service/format-string" wizard-key="formatString" wizard-label="" wizard-step="step1" wizard-type="string">%s</format-string>
+  <argument-metadata-key wizard-desc="XPath:/add-formatted-metadata-service/argument-metadata-key[1]" wizard-key="string.1" wizard-label="The Argument Metadata Key" wizard-step="step1" wizard-type="">arg1</argument-metadata-key>
+  <metadata-key wizard-desc="XPath:/add-formatted-metadata-service/metadata-key" wizard-key="metadataKey" wizard-label="The Metadata Key" wizard-step="step1" wizard-type="string">arg1</metadata-key>
+</add-formatted-metadata-service>

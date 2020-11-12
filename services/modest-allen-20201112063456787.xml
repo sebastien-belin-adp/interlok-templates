@@ -1,9 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?><add-extended-logging-context-service tmpl-alias="add-extended-logging-context-service" tmpl-author="Default Admin" tmpl-class-name="com.adaptris.core.services.AddExtendedLoggingContext" tmpl-created="2020-11-12T06:34:46" tmpl-desc="" tmpl-keywords="service" tmpl-name="modest-allen-20201112063456787" tmpl-target-version="3.11-SNAPSHOT(2020-11-11:INTERLOK-3491)" tmpl-title="add-extended-logging-context-service modest-allen Template" tmpl-type="service" tmpl-wizard="true" wizard-step1-desc="Description" wizard-step1-label="Step" wizard-step1-order="1">
-  <unique-id>modest-allen</unique-id>
-  <values-to-set>
-    <key-value-pair>
-      <key>ghfghfgh</key>
-      <value wizard-desc="XPath:/add-extended-logging-context-service/values-to-set/key-value-pair[1]/value" wizard-key="keyValuePair.1.value" wizard-label="" wizard-step="step1" wizard-type="">fghfghf</value>
-    </key-value-pair>
-  </values-to-set>
-</add-extended-logging-context-service>

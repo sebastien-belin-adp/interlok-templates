@@ -1,3 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?><add-metadata-service tmpl-alias="add-metadata-service" tmpl-author="Default Admin" tmpl-class-name="com.adaptris.core.services.metadata.AddMetadataService" tmpl-created="2021-01-13T07:40:08" tmpl-desc="nauseous-gates" tmpl-keywords="service nauseous-gates" tmpl-name="nauseous-gates-20210113074027244" tmpl-target-version="3.12.0B1-RELEASE(2021-01-11:15:29:46 GMT)" tmpl-title="add-metadata-service nauseous-gates Template" tmpl-type="service" wizard-step1-desc="Description" wizard-step1-label="Step" wizard-step1-order="1">
-  <unique-id>nauseous-gates</unique-id>
-</add-metadata-service>
